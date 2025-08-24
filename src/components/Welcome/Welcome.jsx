@@ -6,21 +6,21 @@ const Welcome = () => {
   const [noBtnPos, setNoBtnPos] = useState({ top: "50%", left: "60%" });
   const [unmuted, setUnmuted] = useState(false);
 
-  useEffect(() => {
-    const audio = document.getElementById("bg-music");
+  // useEffect(() => {
+  //   const audio = document.getElementById("bg-music");
 
-    const enableAudio = () => {
-      if (audio) {
-        setUnmuted(true); // update state → removes mute
-        audio.currentTime = 0;
-        audio.play().catch(err => console.log("Autoplay blocked:", err));
-      }
-      document.removeEventListener("click", enableAudio);
-    };
+  //   const enableAudio = () => {
+  //     if (audio) {
+  //       setUnmuted(true); // update state → removes mute
+  //       audio.currentTime = 0;
+  //       audio.play().catch(err => console.log("Autoplay blocked:", err));
+  //     }
+  //     document.removeEventListener("click", enableAudio);
+  //   };
 
-    document.addEventListener("click", enableAudio);
-    return () => document.removeEventListener("click", enableAudio);
-  }, []);
+  //   document.addEventListener("click", enableAudio);
+  //   return () => document.removeEventListener("click", enableAudio);
+  // }, []);
 
   useEffect(() => {
     let timer;
@@ -120,3 +120,4 @@ const Welcome = () => {
 };
 
 export default Welcome;
+
